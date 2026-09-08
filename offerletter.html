@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Official Letter of Appointment - Hyatt Regency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy-primary: #002B49;
+    --navy-dark: #001A2C;
+    --gold-primary: #C5A059;
+    --gold-light: #F4EFE6;
+    --text-main: #2A2A2A;
+    --text-muted: #555555;
+    --bg-charcoal: #1E2022;
+    --border-color: #E2E8F0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-charcoal);
+    font-family: 'Lora', serif;
+    color: var(--text-main);
+    padding: 40px 15px;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* Navigation Buttons Container */
+.nav-buttons {
+    max-width: 210mm;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--gold-primary);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-nav:hover {
+    background-color: var(--navy-primary);
+    color: #FFFFFF;
+}
+
+.paper {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 50px 60px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    border-top: 6px solid var(--gold-primary);
+    overflow: hidden;
+}
+
+/* Watermark */
+.paper::before {
+    content: "CONFIDENTIAL";
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 100px;
+    font-weight: 700;
+    color: rgba(0, 43, 73, 0.03);
+    letter-spacing: 12px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Letterhead Styling */
+.letterhead {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--navy-primary);
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: var(--navy-primary);
+    line-height: 1;
+}
+
+.hotel {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--gold-primary);
+    margin-top: 6px;
+    text-transform: uppercase;
+}
+
+.department {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.letterhead-address {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Formal Letter Header Elements */
+.letter-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+}
+
+.letter-date-ref {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.letter-recipient {
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    line-height: 1.5;
+}
+
+.letter-recipient .label-to {
+    font-weight: 700;
+    color: var(--navy-primary);
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Letter Subject Line */
+.letter-subject {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 0 25px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--gold-primary);
+}
+
+/* Body Text */
+p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+/* Section Styling */
+.section {
+    margin-top: 22px;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy-primary);
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--navy-primary);
+    padding-bottom: 3px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.section-title::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--gold-primary);
+    margin-right: 8px;
+}
+
+/* Table Information Layout */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.info-table tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table td {
+    padding: 7px 10px;
+    vertical-align: top;
+}
+
+.info-table td.label {
+    font-weight: 600;
+    color: var(--navy-primary);
+    width: 32%;
+    background-color: rgba(244, 239, 230, 0.4);
+}
+
+.info-table td.value {
+    color: var(--text-main);
+}
+
+/* Custom Bullet List */
+.styled-list {
+    list-style: none;
+    margin-left: 5px;
+}
+
+.styled-list li {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.styled-list li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: var(--gold-primary);
+    font-size: 8px;
+    top: 2px;
+}
+
+/* Acceptance Box */
+.acceptance-box {
+    background-color: #FAFAFA;
+    border: 1px dashed var(--gold-primary);
+    padding: 15px 20px;
+    margin-top: 25px;
+    border-radius: 2px;
+}
+
+.acceptance-box p {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.complimentary-close {
+    margin-top: 25px;
+    font-size: 13.5px;
+}
+
+/* Signatures */
+.signature-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    page-break-inside: avoid;
+}
+
+.signature-block {
+    width: 42%;
+    position: relative;
+}
+
+.signature-space {
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+
+.signature-handwritten {
+    font-family: 'Alex Brush', cursive;
+    font-size: 32px;
+    color: #001A2C;
+    line-height: 1;
+    transform: rotate(-3deg);
+}
+
+.signature-line {
+    border-top: 1px solid var(--navy-primary);
+    margin-bottom: 8px;
+}
+
+.signature-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy-primary);
+}
+
+.signature-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    padding-top: 12px;
+    border-top: 1px solid var(--gold-primary);
+    font-size: 11px;
+    text-align: center;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-number::after {
+    content: "Page 1 of 1";
+}
+
+/* Print Specific Settings */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    
+    body {
+        background: #FFFFFF;
+        padding: 0;
+    }
+    
+    .nav-buttons {
+        display: none !important;
+    }
+
+    .paper {
+        box-shadow: none;
+        border-top: 6px solid var(--gold-primary);
+        width: 100%;
+        max-width: 100%;
+        padding: 15mm 20mm;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .paper {
+        padding: 30px 20px;
+        width: 100%;
+    }
+    .letter-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .signature-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .signature-block {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Bar with Back, Download, & Next Buttons -->
+<div class="nav-buttons">
+    <a href="attestation.html" class="btn-nav">&larr; Back</a>
+    <button class="btn-nav" id="downloadBtn" type="button">📥 Download</button>
+    <div id="downloadMessage" style="display:none; color:#16a34a; font-weight:600; margin-top:10px; text-align:center;">
+    Downloaded successfully.
+</div>
+    <a href="attestation.html" class="btn-nav">Next &rarr;</a>
+</div>
+
+<div class="paper">
+    <div class="content-wrapper">
+        
+        <!-- Formal Corporate Letterhead -->
+        <div class="letterhead">
+            <div class="logo">HYATT</div>
+            <div class="hotel">Hyatt Regency Hotel</div>
+            <div class="department">Human Resources Department</div>
+            <div class="letterhead-address">125 East Main Street, rochester, usa 14604, USA • </div>
+        </div>
+
+        <!-- Date & Ref Metadata Line -->
+        <div class="letter-meta">
+            <div class="letter-date-ref">
+                <div><strong>Ref No:</strong> <span id="docRef">Loading...</span></div>
+            </div>
+            <div class="letter-date-ref" style="text-align: right;">
+                <div><strong>Date:</strong> <span id="docDate">Loading...</span></div>
+            </div>
+        </div>
+
+        <!-- Recipient Address Block -->
+        <div class="letter-recipient">
+            <span class="label-to">TO:</span>
+            <strong id="docRecipient">Loading...</strong><br>
+            <span>Candidate for Employment</span>
+        </div>
+
+        <!-- Subject Line -->
+        <div class="letter-subject">
+            SUBJECT: OFFICIAL LETTER OF APPOINTMENT & OFFER OF EMPLOYMENT
+        </div>
+
+        <p>Dear <strong id="docGreeting">Loading...</strong>,</p>
+
+        <p>We are pleased to formally offer you employment with <strong>HYATT REGENCY HOTEL, ROCHESTER, UNITED STATES</strong>. This appointment follows the successful completion of our recruitment process and reflects our confidence in your qualifications, professionalism, and commitment to excellence. We are delighted to welcome you to our organization and look forward to your valuable contribution.</p>
+
+        <div class="section">
+            <div class="section-title">1. Position Details</div>
+            <table class="info-table">
+                <tr>
+    <td class="label">Job Title</td>
+    <td class="value" id="docJobTitle">Loading...</td>
+</tr>
+                <tr>
+                    <td class="label">Department</td>
+                    <td class="value" id="docDepartment">Loading...</td>
+                </tr>
+                <tr>
+                    <td class="label">Work Location</td>
+                    <td class="value">HYATT REGENCY Hotel, ROCHESTER, USA</td>
+                </tr>
+                <tr>
+                    <td class="label">Employment Type</td>
+                    <td class="value">Full-Time Employment</td>
+                </tr>
+                <tr>
+                    <td class="label">Contract Duration</td>
+                    <td class="value">Three (3) Years, Renewable Subject to Performance</td>
+                </tr>
+                <tr>
+                    <td class="label">Proposed Start Date</td>
+                    <td class="value">To Be Communicated Upon Completion of Processing</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">2. Salary & Compensation</div>
+            <table class="info-table">
+                <tr>
+                    <td class="label">Basic Salary</td>
+                    <td class="value">20 USD  Per hour</td>
+                </tr>
+                <tr>
+                    <td class="label">Overtime</td>
+                    <td class="value">Paid in accordance with applicable United States Labour Laws</td>
+                </tr>
+                <tr>
+                    <td class="label">Payment Method</td>
+                    <td class="value">Monthly Direct Bank Deposit</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">3. Benefits & Entitlements</div>
+            <table class="info-table">
+                <tr>
+                    <td class="label">Accommodation</td>
+                    <td class="value">Company-provided shared accommodation.</td>
+                </tr>
+                <tr>
+                    <td class="label">Meals</td>
+                    <td class="value">Complimentary duty meals during working hours.</td>
+                </tr>
+                <tr>
+                    <td class="label">Transportation</td>
+                    <td class="value">Employer-provided transport to and from the workplace.</td>
+                </tr>
+                <tr>
+                    <td class="label">Medical Insurance</td>
+                    <td class="value">Comprehensive health insurance coverage.</td>
+                </tr>
+                <tr>
+                    <td class="label">Annual Leave</td>
+                    <td class="value">Paid annual leave in accordance with company policy.</td>
+                </tr>
+                <tr>
+                    <td class="label">Airfare</td>
+                    <td class="value">One-way economy air ticket to Dubai and a return ticket upon successful completion of employment contract.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">4. Pre-Employment Conditions</div>
+            <ul class="styled-list">
+                <li>Possession of a Valid International Passport.</li>
+                <li>Successful Medical Examination.</li>
+                <li>Completion of Employment Eligibility Verification.</li>
+                <li>Visa and Work Authorization Processed by the Employer.</li>
+            </ul>
+        </div>
+
+        <div class="section acceptance-box">
+            <div class="section-title" style="border-bottom: none; margin-bottom: 6px;">5. Acceptance of Offer</div>
+            <p>I, <strong id="docAcceptance">Loading...</strong>, hereby accept this offer of employment with <strong>HYATT REGENCY HOTEL</strong> and agree to comply with all terms, conditions, policies, and procedures governing my employment.</p>
+        </div>
+
+        <div class="complimentary-close">
+            <p>Sincerely,</p>
+        </div>
+
+        <div class="signature-container">
+            <!-- HR Manager Signature -->
+            <div class="signature-block">
+                <div class="signature-space">
+                    <span class="signature-handwritten">A. J. Miller</span>
+                </div>
+                <div class="signature-line"></div>
+                <div class="signature-title">Authorized Human Resources Manager</div>
+                <div class="signature-subtitle">HYATT REGENCY HOTEL</div>
+            </div>
+
+            <!-- Employee Signature Box -->
+            <div class="signature-block">
+                <div class="signature-space"></div>
+                <div class="signature-line"></div>
+                <div class="signature-title" id="docSigName">Loading...</div>
+                <div class="signature-subtitle">Employee Signature</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span><strong>HYATT REGENCY HOTEL</strong> • Human Resources Department</span>
+            <span>Official Employment Document • Confidential</span>
+            <span class="page-number"></span>
+        </div>
+
+    </div>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    // Firebase Configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCsZbX8doOr6DxT7C9p8SK6YReKKlyVcNI",
+        authDomain: "hyatt-regency-afc7e.firebaseapp.com",
+        projectId: "hyatt-regency-afc7e",
+        storageBucket: "hyatt-regency-afc7e.firebasestorage.app",
+        messagingSenderId: "636460619228",
+        appId: "1:636460619228:web:5734324ff28ca738f4eb19",
+        measurementId: "G-K5KTLSKDRN"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Download Button Click Handler
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+    const msg = document.getElementById("downloadMessage");
+    msg.style.display = "block";
+
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 3000);
+});
+
+    // Helper: Add 10 days to application date and format as e.g., "15th June 2026"
+    function calculateTenDaysLaterDate(rawAppDate) {
+        let baseDate;
+
+        if (rawAppDate) {
+            if (typeof rawAppDate.toDate === "function") {
+                // Firestore Timestamp
+                baseDate = rawAppDate.toDate();
+            } else if (typeof rawAppDate === "string") {
+                // Handle ordinal day strings like "5th June 2026" -> "5 June 2026"
+                const cleanedStr = rawAppDate.replace(/(\d+)(st|nd|rd|th)/i, '$1');
+                const parsed = new Date(cleanedStr);
+                baseDate = isNaN(parsed.getTime()) ? new Date() : parsed;
+            } else {
+                baseDate = new Date(rawAppDate);
+            }
+        } else {
+            baseDate = new Date();
+        }
+
+        // Add 10 days
+        baseDate.setDate(baseDate.getDate() + 10);
+
+        const day = baseDate.getDate();
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const month = monthNames[baseDate.getMonth()];
+        const year = baseDate.getFullYear();
+
+        // Get Ordinal Suffix (e.g. 15th)
+        function getOrdinal(n) {
+            const s = ["th", "st", "nd", "rd"];
+            const v = n % 100;
+            return n + (s[(v - 20) % 10] || s[v] || s[0]);
+        }
+
+        return `${getOrdinal(day)} ${month} ${year}`;
+    }
+
+    // Fetch and Populate Applicant Data
+    async function loadApplicantData(uid) {
+        try {
+            const userDocRef = doc(db, "Applicants", uid);
+            const userDocSnap = await getDoc(userDocRef);
+
+            if (userDocSnap.exists()) {
+                const data = userDocSnap.data();
+
+                // 1. Set Date (10 days after application date)
+                const applicationDateInput = data.applicationDate || data.dateApplied || data.createdAt;
+                document.getElementById("docDate").textContent = calculateTenDaysLaterDate(applicationDateInput);
+
+                // 2. Set Reference Code with Firebase applicationCode
+                const appCode = data.applicationCode || "HYAT330";
+                document.getElementById("docRef").textContent = `${appCode}/ HR /HK/2026/SK`;
+
+                // 3. Set Name Across All Fields
+                const nameUpper = (data.fullName || "APPLICANT NAME").toUpperCase();
+                document.getElementById("docRecipient").textContent = nameUpper;
+                document.getElementById("docGreeting").textContent = nameUpper;
+                document.getElementById("docAcceptance").textContent = nameUpper;
+                document.getElementById("docSigName").textContent = nameUpper;
+
+                // 4. Set Department
+                const position = data.appliedPosition || "";
+                document.getElementById("docJobTitle").textContent =
+    position || "Not Assigned";
+   
+let department = "General Operations";
+
+switch (position) {
+    case "Room & Housekeeping Attendant":
+        department = "Housekeeping";
+        break;
+
+    case "Front Desk Receptionist":
+        department = "Front Office";
+        break;
+
+    case "Food & Beverage Waiter / Waitress":
+        department = "Food & Beverage";
+        break;
+
+    case "Guest Service Bell Boy":
+        department = "Guest Services";
+        break;
+
+    case "Swimming Pool Attendant":
+        department = "Recreation";
+        break;
+}
+
+// Display the department AFTER the switch
+document.getElementById("docDepartment").textContent = department;
+
+            } else {
+                console.error("No applicant document found in Firestore.");
+            }
+        } catch (error) {
+            console.error("Error loading document data:", error);
+        }
+    }
+
+    // Check for UID in URL parameter or active auth session
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlUid = urlParams.get('uid');
+
+    if (urlUid) {
+        loadApplicantData(urlUid);
+    } else {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                loadApplicantData(user.uid);
+            } else {
+                console.warn("User not logged in and no UID in URL parameter.");
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
